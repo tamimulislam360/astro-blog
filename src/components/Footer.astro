@@ -1,20 +1,30 @@
 ---
+import Social from "./Social.astro";
 const socialPlatforms = [
     {
-        name: 'Facebook',
-        link: 'https://www.facebook.com/tamimulislam360'
+        platform: 'facebook',
+        userName: 'tamimulislam360'
     },
     {
-        name: 'Github',
-        link: 'https://www.github.com/tamimulislam360'
+        platform: 'github',
+        userName: 'tamimulislam360'
     },
     {
-        name: 'Linkedin',
-        link: 'https://www.linkedin.com/tamimulislam360'
+        platform: 'linkedin',
+        userName: 'in/tamimulislam360'
     },
 ]
 ---
 
-<footer style="display: flex; gap: 20px">
-    {socialPlatforms.map(platform => <a href={platform.link}>{platform.name}</a>)}
+<footer>
+    {
+        socialPlatforms.map(platform => <Social platform={platform.platform} userName={platform.userName} />)
+    }
 </footer>
+
+<style>
+    footer{
+        display: flex;
+        gap: 20px;
+    }
+</style>
