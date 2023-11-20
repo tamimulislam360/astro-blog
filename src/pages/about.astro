@@ -5,6 +5,12 @@ const pageTitle = 'About me'
 const name = 'Tamimul Islam'
 const title = 'Full Stack Developer'
 const description = 'Hello, I am Tamimul Islam from Chittagong, Bangladesh. I am a full-stack developer.'
+const skills = ['React', 'Astro', 'Solid', 'Next.js', 'Javascript', 'Node.js', 'MongoDb', 'Typescript']
+
+// skill vars
+const skillColor = 'navy'
+const skillWeight = 'bold'
+const skillCase = 'uppercase'
 ---
 
 <html lang="en">
@@ -14,6 +20,21 @@ const description = 'Hello, I am Tamimul Islam from Chittagong, Bangladesh. I am
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+
+        <style>
+            h1{
+                font-size: 2rem;
+            }
+            h3{
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+            .skill{
+                color: var(--skillColor);
+                font-weight: var(--skillWeight);
+                text-transform: var(--skillCase);
+            }
+        </style>
 	</head>
 	<body>
 		<div>
@@ -25,5 +46,8 @@ const description = 'Hello, I am Tamimul Islam from Chittagong, Bangladesh. I am
         <h3>{name}</h3>
         <h5>{title}</h5>
         <p>{description}</p>
+        <ul>
+            {skills.map(skill => <li class="skill">{skill}</li>)}
+        </ul>
 	</body>
 </html>
