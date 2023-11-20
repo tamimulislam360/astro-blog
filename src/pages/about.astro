@@ -1,4 +1,5 @@
 ---
+import Navigation from '../components/Navigation.astro'
 import '../styles/global.css'
 
 const pageTitle = 'About me'
@@ -40,11 +41,8 @@ const skillCase = 'uppercase'
         </style>
 	</head>
 	<body>
-		<div>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/blog">Blog</a>
-		</div>
+        <Navigation/>
+
 		<h1>{pageTitle}</h1>
         <h3>{name}</h3>
         <h5>{title}</h5>
