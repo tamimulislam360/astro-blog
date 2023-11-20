@@ -1,0 +1,20 @@
+---
+const socialPlatforms = [
+    {
+        name: 'Facebook',
+        link: 'https://www.facebook.com/tamimulislam360'
+    },
+    {
+        name: 'Github',
+        link: 'https://www.github.com/tamimulislam360'
+    },
+    {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/tamimulislam360'
+    },
+]
+---
+
+<footer style="display: flex; gap: 20px">
+    {socialPlatforms.map(platform => <a href={platform.link}>{platform.name}</a>)}
+</footer>
