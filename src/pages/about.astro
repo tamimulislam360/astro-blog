@@ -21,9 +21,10 @@ const skillCase = 'uppercase'
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 
-        <style>
+        <style define:vars={{skillColor, skillWeight, skillCase}}>
             h1{
                 font-size: 2rem;
+                color: purple;
             }
             h3{
                 font-size: 1.5rem;
