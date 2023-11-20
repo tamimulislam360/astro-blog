@@ -1,5 +1,10 @@
 ---
+const pageTitle = 'About me'
 
+// about me
+const name = 'Tamimul Islam'
+const title = 'Full Stack Developer'
+const description = 'Hello, I am Tamimul Islam from Chittagong, Bangladesh. I am a full-stack developer.'
 ---
 
 <html lang="en">
@@ -8,7 +13,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Blog</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<div>
@@ -16,6 +21,9 @@
 			<a href="/about">About</a>
 			<a href="/blog">Blog</a>
 		</div>
-		<h1>This is about page. This is a astro blog website</h1>
+		<h1>{pageTitle}</h1>
+        <h3>{name}</h3>
+        <h5>{title}</h5>
+        <p>{description}</p>
 	</body>
 </html>
