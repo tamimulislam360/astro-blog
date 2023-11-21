@@ -25,7 +25,7 @@ const {posts} = Astro.props
 ---
 
 <BaseLayout pageTitle={tag}>
-    <h2>{posts.length} posts found about {tag}</h2>
+    <h2 transition:animate="slide">{posts.length} posts found about {tag}</h2>
     <ul>
         {
             posts.map(post => <BlogPostLink url={`/posts/${post.slug}`} title={post.data.title} />)

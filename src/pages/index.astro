@@ -5,6 +5,6 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <BaseLayout pageTitle="Home">
-	<h1>Welcome to the Astro Blog</h1>
+	<h1 transition:animate="slide">Welcome to the Astro Blog</h1>
 	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 </BaseLayout>
