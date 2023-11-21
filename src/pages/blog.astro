@@ -1,16 +1,25 @@
 ---
-import BlogPostLink from '../components/BlogPostLink.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-const allPosts = await Astro.glob('./posts/*.md')
+import BlogPostLink from "../components/BlogPostLink.astro";
+import Tag from "../components/Tag.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("./posts/*.md");
 
-
-
+const uniqueTags = allPosts.map(post => post.frontmatter.tags).flat();
 ---
 
 <BaseLayout pageTitle="Blog">
-	<h1>Here will be the blog lists.</h1>
-	<ul>
+  <h1>Here will be the blog lists.</h1>
 
-			{allPosts.map(post => <BlogPostLink url={post.url} title={post.frontmatter.title} />)}
-	  </ul>
+	
+
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPostLink url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+
+  <h5>Tags:</h5>
+  <Tag tags={uniqueTags} />
 </BaseLayout>
