@@ -1,10 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import BlogPostLink from "../components/BlogPostLink.astro";
 import Tag from "../components/Tag.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await getCollection('posts');
 
-const uniqueTags = allPosts.map(post => post.frontmatter.tags).flat();
+const uniqueTags = allPosts.map(post => post.data.tags).flat();
 ---
 
 <BaseLayout pageTitle="Blog">
@@ -15,7 +16,7 @@ const uniqueTags = allPosts.map(post => post.frontmatter.tags).flat();
   <ul>
     {
       allPosts.map((post) => (
-        <BlogPostLink url={post.url} title={post.frontmatter.title} />
+        <BlogPostLink url={`/posts/${post.slug}`} title={post.data.title} />
       ))
     }
   </ul>

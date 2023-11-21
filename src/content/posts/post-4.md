@@ -1,6 +1,6 @@
 ---
-layout: '../../layouts/MarkdownLayout.astro'
-title: My Fifth Blog Post
+
+title: My Fourth Blog Post
 author: Astro Learner
 description: "This post will show up on its own!"
 image:
